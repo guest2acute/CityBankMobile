@@ -18,10 +18,12 @@ class AccountsDetailsScreen extends Component {
     let language = props.route.params.language;
     let itemVal = [{
       accountNo: 300200500200855,
-      balance: 50000,
+      balance: "20000",
+      isShown:false
     }, {
       accountNo: 300200500200856,
-      balance: 20000,
+      balance: "50000",
+      isShown:false
     }];
     this.state = {
       listDataSource: [
@@ -33,14 +35,14 @@ class AccountsDetailsScreen extends Component {
           ),
           subCategory: [{
             customInnerItem: (
-              this.subView(itemVal[0])
+              this.subView(itemVal[0],language)
             ),
             id: "11",
             name: "",
           },
             {
               customInnerItem: (
-                this.subView(itemVal[1])
+                this.subView(itemVal[1],language)
               ),
               id: "12",
               name: "",
@@ -55,14 +57,14 @@ class AccountsDetailsScreen extends Component {
           ),
           subCategory: [{
             customInnerItem: (
-              this.subView(itemVal[0])
+              this.subView(itemVal[0],language)
             ),
             id: "21",
             name: "",
           },
             {
               customInnerItem: (
-                this.subView(itemVal[1])
+                this.subView(itemVal[1],language)
               ),
               id: "22",
               name: "",
@@ -77,14 +79,14 @@ class AccountsDetailsScreen extends Component {
           ),
           subCategory: [{
             customInnerItem: (
-              this.subView(itemVal[0])
+              this.subView(itemVal[0],language)
             ),
             id: "31",
             name: "",
           },
             {
               customInnerItem: (
-                this.subView(itemVal[1])
+                this.subView(itemVal[1],language)
               ),
               id: "32",
               name: "",
@@ -99,14 +101,14 @@ class AccountsDetailsScreen extends Component {
           ),
           subCategory: [{
             customInnerItem: (
-              this.subView(itemVal[0])
+              this.subView(itemVal[0],language)
             ),
             id: "41",
             name: "",
           },
             {
               customInnerItem: (
-                this.subView(itemVal[1])
+                this.subView(itemVal[1],language)
               ),
               id: "42",
               name: "",
@@ -134,7 +136,7 @@ class AccountsDetailsScreen extends Component {
     </View>);
   }
 
-  subView(item) {
+  subView(item,lang) {
     return (
       <View style={{ margin: 15 }}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -151,8 +153,8 @@ class AccountsDetailsScreen extends Component {
                 fontFamily: fontStyle.RobotoMedium,
                 fontSize: FontSize.getSize(12),
               }}>Balance:</Text>
-              <Text style={{ fontFamily: fontStyle.RobotoRegular, fontSize: FontSize.getSize(12) }}>
-                {item.balance}</Text>
+              <Text style={{color:themeStyle.THEME_COLOR, fontFamily: fontStyle.RobotoRegular, fontSize: FontSize.getSize(12) }}>
+                {item.isShown?item.balance:lang.view_balance}</Text>
             </View>
           </View>
           <Image resizeMode={"contain"} source={require("../../resources/images/arrow_right_ios.png")}

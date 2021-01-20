@@ -69,7 +69,7 @@ class ChangePwdScreen extends Component {
   }
 
   async redirect() {
-    this.props.navigation.replace("UploadUserDetails", { language: this.props.language });
+    Utility.alertWithBack("OK","Successfully changed");
   }
 
   changeLanguage(langCode) {

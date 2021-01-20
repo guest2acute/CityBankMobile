@@ -1,6 +1,3 @@
-// Custom Navigation Drawer / Sidebar with Image and Icon in Menu Options
-// https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
-
 import React from "react";
 import {
   SafeAreaView,
@@ -76,7 +73,7 @@ const CustomSidebarMenu = (props) => {
                    tintColor: themeStyle.WHITE,/*transform: [{ rotate: '90deg'}] */
                  }} />
         </View>
-        <View style={{ backgroundColor: "#CCCCCC", height: 0.5 }} />
+        <View style={{ backgroundColor: themeStyle.WHITE, height: 0.5 }} />
         <TouchableOpacity onPress={() => {
           props.navigation.closeDrawer();
           props.navigation.navigate("NotificationsScreen");
@@ -95,7 +92,7 @@ const CustomSidebarMenu = (props) => {
           </View>
         </TouchableOpacity>
 
-        <View style={{ backgroundColor: "#CCCCCC", height: 0.5 }} />
+        <View style={{ backgroundColor: themeStyle.WHITE, height: 0.5 }} />
         <TouchableOpacity onPress={() => {
           props.navigation.closeDrawer();
           props.navigation.navigate("ContactUsScreen");
@@ -113,7 +110,7 @@ const CustomSidebarMenu = (props) => {
                    }} />
           </View>
         </TouchableOpacity>
-        <View style={{ backgroundColor: "#CCCCCC", height: 0.5 }} />
+        <View style={{ backgroundColor: themeStyle.WHITE, height: 0.5 }} />
         <TouchableOpacity onPress={() => {
           props.navigation.closeDrawer();
           props.navigation.navigate("AboutUsScreen");
@@ -134,7 +131,7 @@ const CustomSidebarMenu = (props) => {
 
           </View>
         </TouchableOpacity>
-        <View style={{ backgroundColor: "#CCCCCC", height: 0.5 }} />
+        <View style={{ backgroundColor: themeStyle.WHITE, height: 0.5 }} />
 
         <TouchableOpacity onPress={async () => {
           await User.clear(Config.UserId);
@@ -158,7 +155,7 @@ const CustomSidebarMenu = (props) => {
                    }} />
           </View>
         </TouchableOpacity>
-        <View style={{ backgroundColor: "#CCCCCC", height: 0.5 }} />
+        <View style={{ backgroundColor: themeStyle.WHITE, height: 0.5 }} />
 
       </DrawerContentScrollView>
       <Text
